@@ -1,0 +1,26 @@
+# Chapter 7 Files
+#exercise1
+fname = open('ash.txt')
+for line in fname:
+    print(line.upper())
+fname.close()
+
+#exercise2
+fname = open('mbox-short.txt')
+count = 0
+total = 0
+for line in fname:
+    if line.startswith('X-DSPAM-Confidence:'):
+        count = count+1
+        numstart = int(line.find(':'))
+        num = float(line[numstart+1:-2])
+        total = total +num
+print(total/count)
+
+#exercise3
+fname = input('Enter the name:')
+if fname =='na na boo boo':
+    fileName = open(fname,'w')
+    line = fname.upper()+" - You have been punk'd!"
+    fileName.write(line)
+    print(line)
