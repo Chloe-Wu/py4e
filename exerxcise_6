@@ -1,0 +1,7 @@
+# chapter 6
+# exercise 5
+str = 'X-DSPAM_Confidence:0.8475'
+colon=str.find(':')
+str_num = str[colon+1:]
+print(str_num)
+print(float(str_num))
