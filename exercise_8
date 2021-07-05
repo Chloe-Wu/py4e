@@ -1,0 +1,37 @@
+# Chapter 8 lists
+
+#Exercise 4
+fname = open('Romeo.txt')
+str =[]
+for line in fname:
+    str = str+line.split(' ')
+str.sort()
+print(str)
+fname.close()
+
+#Exercise 5
+fname = input('Enter a file name: ')
+fileName = open(fname)
+count = 0
+for line in fileName:
+    if line.startswith('From') :
+        if not line.startswith('From:'):
+            words = line.split()
+            email = words[1]
+            count = count +1
+            print(email)
+print('There were',count,'lines in the file with From as the first word')
+
+#Exercise 6
+my_num = []
+while True:
+    numInput = input('Enter a number: ')
+    if numInput == 'done':
+        break
+    try:
+        num = float(numInput)
+    except:
+        print('Invalid')
+        continue
+    my_num.append(num)
+print(max(my_num),min(my_num))
